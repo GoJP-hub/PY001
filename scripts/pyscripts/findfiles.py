@@ -1,5 +1,8 @@
 import os
-from glob import glob
+#from glob import glob
+from components import srchfl
+#import srchfl
+
 # Comments
 #特定の拡張子を持つファイルを検索するためのスクリプト
 
@@ -8,13 +11,13 @@ fld_pth = ["C:\\APPL_DEV\\PY001\\scripts\\pyscripts"]
 target_ext = "txt"
 
 # Functions
-def search_files(flname):
-    for fld in fld_pth:
-        srch_results = [y for x in os.walk(fld) for y in glob(os.path.join(x[0], flname))]
-        for srch_result in srch_results:
-            print(srch_result)
-            os.startfile(srch_result)
-            return;
+#def search_files(flname):
+#    for fld in fld_pth:
+#        srch_results = [y for x in os.walk(fld) for y in glob(os.path.join(x[0], flname))]
+#        for srch_result in srch_results:
+#            print(srch_result)
+#            os.startfile(srch_result)
+#            return;
 
 # Script Process
 while True:
@@ -22,4 +25,4 @@ while True:
     flname = input("please enter the filename without extension here: ")
     flname = flname+"."+target_ext
     #print(flname)
-    search_files(flname)
+    srchfl.search_files(flname, fld_pth)
